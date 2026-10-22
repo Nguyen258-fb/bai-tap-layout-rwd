@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành grid-row-gap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        /* 1. Ví dụ sử dụng đơn vị length (px) */
+        .container-px {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 20px;
+            margin-bottom: 20px;
+        }
+        .container-px div {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #b0e0e6;
+        }
+
+        /* 2. Ví dụ sử dụng đơn vị phần trăm (%) */
+        .container-percent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 5%;
+            height: 300px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        .container-percent div {
+            background-color: lightgreen;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #98fb98;
+        }
+
+        /* 3. Ví dụ sử dụng giá trị toàn cục (initial) */
+        .container-global {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: initial;
+            margin-bottom: 20px;
+        }
+        .container-global div {
+            background-color: lightcoral;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #f08080;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực hành thuộc tính grid-row-gap trong CSS Grid</h1>
+
+    <!-- 1. Ví dụ Length (px) -->
+    <h2>1. Khoảng cách hàng bằng pixel (grid-row-gap: 20px)</h2>
+    <div class="container-px">
+        <div>Ô 1 (px)</div>
+        <div>Ô 2 (px)</div>
+        <div>Ô 3 (px)</div>
+        <div>Ô 4 (px)</div>
+    </div>
+
+    <!-- 2. Ví dụ Percentage (%) -->
+    <h2>2. Khoảng cách hàng bằng phần trăm (grid-row-gap: 5%)</h2>
+    <div class="container-percent">
+        <div>Ô 1 (%)</div>
+        <div>Ô 2 (%)</div>
+        <div>Ô 3 (%)</div>
+        <div>Ô 4 (%)</div>
+    </div>
+
+    <!-- 3. Ví dụ Global Value (initial) -->
+    <h2>3. Giá trị toàn cục (grid-row-gap: initial)</h2>
+    <div class="container-global">
+        <div>Ô 1 (initial)</div>
+        <div>Ô 2 (initial)</div>
+        <div>Ô 3 (initial)</div>
+        <div>Ô 4 (initial)</div>
+    </div>
+
+</body>
+</html>
