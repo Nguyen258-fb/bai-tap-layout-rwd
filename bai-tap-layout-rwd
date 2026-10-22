@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Tạo layout với RWD</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Thanh điều hướng trên cùng (Header / Navbar) */
+        .navbar {
+            background-color: #222222;
+            color: #9d9d9d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            min-height: 50px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            color: #ffffff;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: #9d9d9d;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+        }
+
+        .nav-links li a.active,
+        .nav-links li a:hover {
+            background-color: #080808;
+            color: #ffffff;
+        }
+
+        .login a {
+            color: #9d9d9d;
+            text-decoration: none;
+        }
+
+        .login a:hover {
+            color: #ffffff;
+        }
+
+        /* Khung chứa 3 cột chính */
+        .container {
+            display: flex;
+            min-height: calc(100vh - 100px);
+        }
+
+        /* Cột bên trái (Sidebar) */
+        .left-sidebar {
+            flex: 2; /* Chiếm khoảng 20% */
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .left-sidebar p {
+            margin-bottom: 15px;
+        }
+
+        .left-sidebar a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+        /* Cột nội dung ở giữa */
+        .main-content {
+            flex: 6; /* Chiếm khoảng 60% */
+            padding: 20px 30px;
+            background-color: #ffffff;
+        }
+
+        .main-content h1, 
+        .main-content h3 {
+            margin-bottom: 15px;
+            color: #333333;
+        }
+
+        .main-content p {
+            margin-bottom: 20px;
+            color: #555555;
+            text-align: justify;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #eeeeee;
+            margin: 20px 0;
+        }
+
+        /* Cột quảng cáo bên phải (ADS) */
+        .right-sidebar {
+            flex: 2; /* Chiếm khoảng 20% */
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ads-box {
+            background-color: #f9f9f9;
+            border: 1px solid #dcdcdc;
+            padding: 35px 0;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            color: #555555;
+        }
+
+        /* Phần chân trang (Footer) */
+        .footer {
+            background-color: #555555;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            min-height: 50px;
+        }
+
+        /* Thiết lập Responsive (RWD) cho màn hình nhỏ (Điện thoại, Tablet) */
+        @media screen and (max-width: 768px) {
+            .navbar, 
+            .nav-left, 
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .logo {
+                margin: 10px 0;
+            }
+
+            .login {
+                padding: 10px 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Phần thanh điều hướng (Navbar) -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="#" class="logo">Logo</a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="login">
+            <a href="#">&#10162; Login</a>
+        </div>
+    </div>
+
+    <!-- Phần thân trang (3 cột) -->
+    <div class="container">
+        <!-- Cột trái -->
+        <div class="left-sidebar">
+            <p><a href="#">Link 1</a></p>
+            <p><a href="#">Link 2</a></p>
+            <p><a href="#">Link 3</a></p>
+        </div>
+
+        <!-- Cột nội dung chính -->
+        <div class="main-content">
+            <h1>Welcome</h1>
+            <p>
+                Trang web này được thiết kế với bố cục đáp ứng (Responsive Web Design - RWD). Khi bạn xem trên màn hình máy tính, nội dung sẽ được chia thành 3 cột rõ rệt: thanh liên kết bên trái, phần bài viết chính ở giữa và khu vực đặt quảng cáo ở bên phải. Khi thu nhỏ cửa sổ trình duyệt hoặc xem trên điện thoại, các cột sẽ tự động xếp chồng lên nhau theo chiều dọc để dễ đọc hơn.
+            </p>
+            <hr>
+            <h3>Test</h3>
+            <p>Nội dung thử nghiệm bố cục trang web...</p>
+        </div>
+
+        <!-- Cột phải -->
+        <div class="right-sidebar">
+            <div class="ads-box">ADS</div>
+            <div class="ads-box">ADS</div>
+        </div>
+    </div>
+
+    <!-- Phần chân trang (Footer) -->
+    <div class="footer">
+        <p>Footer Text</p>
+    </div>
+
+</body>
+</html>
